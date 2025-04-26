@@ -167,36 +167,34 @@ int main() {
 
 
 //5. WAP in c to illustrate read system calls
-#include <fcntl.h>     // for open()
-#include <stdio.h>     // for printf(), perror()
-#include <unistd.h>    // for read(), close()
-#include <stdlib.h>    // for malloc(), exit()
+#include <fcntl.h>   // for open()
+#include <stdio.h>   // for printf()
+#include <stdlib.h>  // for exit()
+#include <unistd.h>  // for read(), close()
 
 int main() {
-    int fd, sz;
-    char* c = (char*) calloc(100, sizeof(char));  // Allocate memory to hold read data
+    char c;
+    int fd1 = open("foo.txt", O_RDONLY, 0);
+    int fd2 = open("foo.txt", O_RDONLY, 0);
 
-    // Open the file in read-only mode
-    fd = open("foo.txt", O_RDONLY);
-    if (fd < 0) {
-        perror("Open failed");
+    if (fd1 < 0 || fd2 < 0) {
+        perror("Failed to open file");
         exit(1);
     }
 
-    // Read 10 bytes from the file
-    sz = read(fd, c, 10);
-    printf("Called read(%d, c, 10). Returned that %d bytes were read.\n", fd, sz);
+    // Read one byte from each file descriptor
+    read(fd1, &c, 1);
+    read(fd2, &c, 1);
 
-    // Null-terminate the string and print the content
-    c[sz] = '\0';
-    printf("Those bytes are: %s\n", c);
+    printf("c = %c\n", c);
 
-    // Clean up
-    close(fd);
-    free(c);
+    // Close file descriptors
+    close(fd1);
+    close(fd2);
 
-    return 0;
+    exit(0);
 }
+
 
 
 //6. WAP in c to illustrate write system call

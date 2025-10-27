@@ -1,0 +1,313 @@
+exp 2
+Title: To implement various basic networking commands
+Aim: - To implement various basic networking commands
+System Software: -• Ubuntu System
+Theory/ Working Principle:
+1).Ping Command Syntax:
+Short for Packet Internet Groper, ping is a utility used to verify whether or not a network data
+packet is capable of being distributed to an address without errors. The ping utility is commonly
+used to check for network errors.
+2) Tracert Command
+The tracert command is used to visually see a network packet being sent and received and the
+amount of hops required for that packet to get to its destination. Users with Microsoft Windows
+2000 and Windows XP who need additional information network latency and network loss should also
+consider using the path ping command.
+3).IPCONFIG: -
+(Internet Protocol Configuration) A Windows command line utility that is used to manage the IP
+address assigned to the machine it is running in. Used without any additional parameters, it
+displays the computer's currently assigned IP, subnet mask and default gateway addresses.
+4)netstat:-
+Abbreviation of network statistics, the netstat command is a command found in almost all
+command line environments that allow you to view the statistics of the network.
+5) ARP
+Short for Address Resolution Protocol, ARP is used with the IP for mapping a 32-bit Internet
+Protocol address to a MAC address that is recognized in the local network specified in RFC 826.
+Once recognized, the server or networking device returns a response containing the required address.
+6. NSLOOKUP:
+Nslookup (stands for “Name Server Lookup”) is a useful command for getting information
+from the DNS server. It is a network administration tool for querying the Domain Name System
+(DNS) to obtain domain name or IP address mapping or any other specific DNS record. It is
+also used to troubleshoot DNS related problems.
+7. RARP:-
+Rarp manipulates the kernel's RARP table in various ways. The primary options are clearing an
+address mapping entry and manually setting up one. For debugging purposes, the rarp program
+also allows a complete dump of the RARP table.
+8.ROUTE:
+Route command in Linux is used when you want to work with the IP/kernel routing table. It is
+mainly used to set up static routes to specific hosts or networks via an interface. It is used for
+showing or update the IP/kernel routing table.
+9.DIG
+The dig command in Linux is used to gather DNS information. It stands for Domain Information
+Groper, and it collects data about Domain Name Servers. The dig command is helpful for
+diagnosing DNS problems, but is also used to display DNS information. This guide will help you
+understand and use the Linux dig command.
+conclusion:
+Hence we understand the concept of various basic networking commands and perform thevarious commands in linux.
+
+exp 4
+Aim: - To perform an experiment using WIRESHARK to understand the
+operation of TCP/IP layers.
+System Software: -Wireshark,Ubuntu System
+Theory/ Working Principle:
+WIRESHARK is a network packet analyzer . A network packet
+analyzer presents captured packet data in as much data as possible.
+Here are some reasons people use Wireshark:
+1. Network Administrators use it to troubleshoot network problems
+2. Network security engineers use it to examine security problems
+3. QA engineers use it to veri†y network applications
+4. Developers use it to debug protocol implementations
+5. People use it to learn network protocol internals
+Analyzing Data Packets on Wireshark
+Wireshark shows you three different panes for inspecting packet data. The Packet
+List, the top pane, is a list of all the packets in the capture. When you click on a
+packet, the other two panes change to show you the details about the selected
+packet. You can also tell if the packet is part of a conversation.
+Wireshark Capture Filters
+Capture filters limit the captured packets by the filter. Meaning if the packets don't
+match the filter, Wireshark won't save them. Here are some examples of capture filters:
+host IP-address: this filter limits the capture to traffic to and from the IP address net
+192.168.0.0/24: this filter captures all traffic on the subnet.
+dst host IP-address: capture packets sent to the
+specified host. port 53: capture traffic on port
+53 only.
+conclusion :
+
+exp 6
+Title: To implement Cisco Packet Tracer.
+Aim: - To implement Cisco Packet Tracer
+System Software: - Cisco Packet Tracer software
+Theory/ Working Principle:
+Cisco Packet Tracer
+Packet Tracer is a cross-platform visual simulation tool designed by Cisco Systems that
+allows
+users to create network topologies and imitate modern computer networks. The software
+allows
+users to simulate the configuration of Cisco routers and switches using a simulated command
+line interface. Packet Tracer makes use of a drag and drop user interface, allowing users to
+add
+and remove simulated network devices as they see fit. The software is mainly focused
+towards
+Certified Cisco Network Associate Academy students as an educational tool for helping them
+learn fundamental CCNA concepts.
+
+exp 7
+Aim: - Design VPN and configure RIP using packet Tracer
+System Software: - Cisco Packet Tracer software
+Theory/ Working Principle:
+Routing Information Protocol (RIP) protocol is the intradomain (interior) routing
+protocol which is based on distance vector routing and it is used inside an
+autonomous system.Routers and network links are called nodes. The first
+column of the routing table is the destination address. The cost metric in this
+protocol is hop count which is the number of networks which need to be passed
+to reach a destination. Here infinity is defined by a fixed number which is 16; it
+means that using a Rip network cannot have more than 15 hops. RIP Version-1:
+It is an open standard protocol.It is a classful routing protocol. Updates are
+broadcasted. Its administrative distance value is 120, it means it is not reliable,
+The lesser the administrative distance value the reliability is much more. Its
+metric is hop count and max hop count is 15. There will be a total of 16 routers
+in the network. When there will be the same number of hop to reach the
+destination, Rip starts to perform load balancing. Load balancing means if
+there are three ways to reach the destination and each way has the same number of
+routers then packets will be sent to each path to reach the destination. This
+reduces traffic and also the load is balanced. It is used in small companies, in
+this protocol routing tables are updated in each 30 sec. Whenever a link breaks,
+the rip traces out another path to reach the destination. It is one of the slowest
+protocols.
+Procedure:
+1) Select “End Devices” on the panel (ctrl+alt+v). Then select PC, Select on logical plane.
+Add 6 PC’s on the logical Panel.
+Select “Network devices”, select “Switches” then select 2960 switch.
+Add 3 switches on logical plane.
+Select “Network devices”, select “Routers” then select 1841 router.
+Add 3 routers in logical plane.
+connect PC with switches select “Connections” , “Copper Straight” cable.
+Connect PC with switches and Switches with routers as shown below.
+Select Router0, select the power button to turn of the router then HWIC-2T card in Physical
+tab. Add the card in router and turn on the router. Repeat for all routers.
+Select Connections then “Serial DTE” to connect with routers.
+Apply IP address to all PC, select “PC”, “Desktop” Tab, “IP Configuration” , apply the IP
+address and Gateway IP to each PC as shown in table.
+PC0 192.168.1.2/255.255.255.0 192.168.1.1
+PC1 192.168.1.3/255.255.255.0 192.168.1.1
+PC2 192.168.2.2/255.255.255.0 192.168.2.1
+PC3 192.168.2.3/255.255.255.0 192.168.2.1
+PC4 192.168.3.2/255.255.255.0 192.168.3.1
+PC5 192.168.3.3/255.255.255.0 192.168.3.1
+Apply IP Address to Router interfaces as given in table. To Apply the IP address you Select
+“Router” Select “Config”,then select “Interface” , Choose each interface apply the IP and turn
+on the Port.
+Add IP Address in RIP of the route and repeat for all routers.
+Send ICMP packets from one PC to another.
+Select Router, select CLI type “show ip route”.
+conclusion :
+
+exp 8
+Aim: - Configure OSPF using packet Tracer
+System Software: - Cisco Packet Tracer software
+Theory/ Working Principle:
+Open Shortest Path First (OSPF) is a link-state routing protocol that is used to
+find the best path between the source and the destination router using its own
+Shortest Path First). OSPF is developed by Internet Engineering Task Force
+(IETF) as one of the Interior Gateway Protocol (IGP), i.e, the protocol which aims
+at moving the packet within a large autonomous system or routing domain. It is
+a network layer protocol which works on protocol number 89 and uses AD value
+110. OSPF uses multicast address 224.0.0.5 for normal communication and
+224.0.0.6 for update to designated router(DR)/Backup Designated Router
+(BDR).
+Procedure:
+1) Select “End Devices” on the panel (ctrl+alt+v). Then select PC, Select on logical plane.
+Add 6 PC’s on the logical Panel.
+Select “Network devices”, select “Switches” then select 2960 switch.
+Add 3 switches on logical plane.
+Select “Network devices”, select “Routers” then select 1841 router.
+Add 3 routers in logical plane.
+To connect PC with switches select “Connections” , “Copper Straight” cable.
+Connect PC with switches and Switches with routers as shown below.
+Select Router0, select the power button to turn of the router then HWIC-2T card in Physical
+tab. Add the card in router and turn on the router. Repeat for all routers.
+Select Connections then “Serial DTE” to connect with routers.
+Apply IP address to all PC, select “PC”, “Desktop” Tab, “IP Configuration” , apply the IP
+address and Gateway IP to each PC as shown in table.
+PC0 10.10.10.2/255.255.255.0 10.10.10.1
+PC1 10.10.10.3/255.255.255.0 10.10.10.1
+PC2 20.20.20.2/255.255.255.0 20.20.20.1
+PC3 20.20.20.3/255.255.255.0 20.20.20.1
+PC4 30.30.30.2/255.255.255.0 30.30.30.1
+PC5 30.30.30.3/255.255.255.0 30.30.30.1
+Apply IP Address to Router interfaces as given in table. To Apply the IP address you Select
+“Router” Select “Config”,then select “Interface” , Choose each interface apply the IP and turn
+on the Port.Select Router 0 then Select CLI
+( to enter in configuration mode enter “enable” then “configure terminal)
+Enter the following code
+enable
+configure terminal
+router ospf 1
+network 10.0.0.0 0.255.255.255 area 0
+network 20.0.0.0 0.255.255.255 area 0
+network 30.0.0.0 0.255.255.255 area 0
+network 40.0.0.0 0.255.255.255 area 0
+network 50.0.0.0 0.255.255.255 area 0
+exit
+Show IP routes
+enable
+show ip route
+conclusion :
+
+exp 9
+Aim: - Telnet Using Packet Tracer
+System Software: -Cisco Packet Tracer
+Theory/ Working Principle:
+TELNET stands for Terminal Network. It is a type of protocol that enables one
+computer to connect to the local computer. It is used as a standard TCP/IP
+protocol for virtual terminal service which is provided by ISO. The computer
+which starts the connection is known as the local computer.
+The computer which is being connected to i.e. which accepts the connection
+known as the remote computer.
+During telnet operation, whatever is being performed on the remote computer
+will be displayed by the local computer. Telnet operates on a client/server
+principle. The local computer uses a telnet client program and the remote
+computers use a telnet server program.
+Logging
+The logging process can be further categorized into two parts:
+1. Local Login
+2. Remote Login
+1. Local Login: Whenever a user logs into its local system, it is known as local
+login.
+2. Remote Login: Remote Login is a process in which users can log in to a
+remote site i.e. computer and use services that are available on the remote
+computer. With the help of remote login, a user is able to understand the result
+of transferring the result of processing from the remote computer to the local
+computer.
+Advantages of Telnet
+1. It provides remote access to someone’s computer system.
+2. Telnet allows the user for more access with fewer problems in data
+transmission.
+3. Telnet saves a lot of time.
+4. The oldest system can be connected to a newer system with telnet
+having different operating systems.
+Disadvantages of Telnet
+1. As it is somehow complex, it becomes difficult to beginners in
+understanding.
+2. Data is sent here in form of plain text, that’s why it is not so secured.
+3. Some capabilities are disabled because of not proper interlinking of the
+remote and local devices.
+Procedure:
+1) Select 3 PCs from the end devices. Select router and and switch as shown below.
+2) Select router enter the following code.(CLI)
+enable
+configure terminal
+hostname R1
+interface g0/0
+ip add 192.168.1.1 255.255.255.0
+end
+wr
+configure terminal
+enable secret cisco
+end
+exit
+enable
+cisco
+configure terminal
+line vty 0 5
+login
+password 12
+end
+3) Select PC open command prompt. Enter following command
+ping 192.168.1.1
+telent 192.168.1.1
+12
+enable
+cisco
+conclusion :
+
+exp 10
+Aim: - SSh Using Packet Tracer
+System Software: -Cisco Packet Tracer
+Theory/ Working Principle:
+SSH(Secure Shell) is an access credential that is used in the SSH Protocol. In
+other words, it is a cryptographic network protocol that is used for transferring
+encrypted data over the network. It allows you to connect to a server, or
+multiple servers, without having you to remember or enter your password for
+each system that is to login remotely from one system into another.
+It always comes in key pair:
+1. Public key – Everyone can see it, no need to protect it. (for encryption
+function)
+2. Private key – Stays in computer, must be protected. (for decryption
+function)
+Key pairs can be of the following types:
+1. User Key – If public key and private key remain with the user.
+2. Host Key – If the public key and private key are on a remote system.
+3. Session key – Used when a large amount of data is to be transmitted.
+How SSH Works ?
+It uses asymmetric cipher for performing encryption and decryption. There are
+many encryption methods:
+rsa, dsa, ed25519 etc.
+SSH is key based authentication that is not prone to brute-force attack.
+It is more convenient and secure than login ids and passwords .There is no
+exposure of valid credentials, if a server has been compromised.
+Procedure:
+SSH
+1) Select 3 PC from the end devices. Select router and and switch as shown below.
+2) Select router enter the following code.
+enable
+configure terminal
+hostname R1
+interface g0/0
+ip add 192.168.1.1 255.255.255.0
+end
+wr
+configure terminal
+ip domain-name SSH1
+crypto key generate rsa
+1024
+line vty 0 15
+transport input ssh
+login local
+ip ssh ver 2
+username R1 privilege 15 password cisco
+3) Select PC open command prompt. Enter following command
+ping 192.168.1.1
+ssh -l R1 192.168.1.1
+cisco
+enable
+Conclusion:

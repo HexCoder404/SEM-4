@@ -1,0 +1,284 @@
+Experiment No. 1
+Title: Implementation of Various Basic Linux Commands
+Aim: To study and execute different basic Linux commands.
+System Requirements: Ubuntu/Linux OS, Terminal access.
+Theory/Working Principle:
+Linux is a multitasking, multiuser operating system that provides a powerful command-line interface
+for performing system operations efficiently. Basic commands allow users to navigate directories,
+manage files, and control system resources.
+Some commonly used commands are:
+ pwd – Displays the present working directory.
+ ls – Lists all files and directories in the current location.
+ cd – Changes the current working directory.
+ mkdir – Creates a new directory.
+ rm – Removes files or directories.
+ cp – Copies files or directories from one location to another.
+ mv – Moves or renames files or directories.
+ cat – Displays contents of files.
+ chmod – Changes file permissions.
+These commands are the foundation of Linux administration and system management,
+enabling automation, configuration, and file handling directly from the terminal.
+Result: Basic Linux commands were successfully executed and their outputs verified.
+Conclusion: Various Linux commands were implemented successfully to understand system
+navigation and file handling.
+Experiment No. 2
+Title: Implementation of Basic Networking Commands
+Aim: To execute and understand the use of basic networking commands in Linux.
+System Requirements: Linux OS with network connectivity.
+Theory/Working Principle:
+Networking commands help in monitoring, configuring, and troubleshooting network connections.
+Some essential commands include:
+ ifconfig / ip addr – Displays and configures network interfaces.
+ ping – Tests connectivity between two hosts.
+ traceroute – Displays the path packets take to reach a destination.
+ netstat – Displays active network connections and listening ports.
+ nslookup / dig – Queries DNS to obtain domain name or IP address mappings.
+ hostname – Displays or sets the system’s host name.
+ route – Shows or manipulates the routing table.
+These commands collectively allow network administrators to verify connectivity, trace
+routes, and analyze configurations for troubleshooting and performance monitoring.
+Result: Basic networking commands were executed successfully and network information
+was obtained.
+Conclusion: Networking commands were implemented to understand network configuration
+and troubleshooting.
+Experiment No. 3
+Title: Network Discovery using Nmap Tool
+Aim: To perform network discovery and scanning using Nmap.
+System Requirements: Linux OS with Nmap installed, active network connection.
+Theory/Working Principle:
+Nmap (Network Mapper) is a powerful open-source tool used for network exploration, security
+auditing, and vulnerability scanning. It works by sending packets to a target host and analyzing the
+responses to determine network topology, active devices, open ports, and services.
+Basic commands:
+ nmap <IP> – Scans a specific host for open ports.
+ nmap -sP <network> – Performs a ping scan for active hosts.
+ nmap -sS <IP> – Conducts a stealth (SYN) scan.
+ nmap -O <IP> – Detects operating system of the target.
+ nmap -A <IP> – Performs an aggressive scan with service and OS detection.
+Nmap can detect live systems, open ports, and running services, making it a crucial tool for
+network administrators and ethical hackers.
+Result: Network devices were discovered successfully and port/service information was
+obtained.
+Conclusion: Nmap was used successfully for network discovery and analysis.
+Experiment No. 4
+Title: Packet Analysis using Wireshark to Understand TCP/IP Layers
+Aim: To use Wireshark for capturing and analyzing packets to study TCP/IP operations.
+System Requirements: Wireshark installed on Windows/Linux OS, Internet connection.
+Theory/Working Principle:
+Wireshark is a network protocol analyzer that captures live packets and displays them in detail. It
+helps understand how TCP/IP layers function during communication.
+When a packet is transmitted, it passes through several layers:
+1. Application Layer – Data generation (e.g., HTTP, DNS).
+2. Transport Layer – TCP/UDP handles data segmentation and reliability.
+3. Network Layer – IP handles logical addressing and routing.
+4. Data Link Layer – Frames are prepared for transmission over physical media.
+By using Wireshark:
+ Start capturing packets.
+ Open a browser and access any website.
+ Stop capture and analyze the packets.
+Each captured packet shows source/destination IP, protocol (TCP/UDP/HTTP), and sequence
+information. This helps visualize encapsulation, sequencing, acknowledgments, and
+retransmissions.
+Result: Packets were captured and analyzed using Wireshark to observe TCP/IP layer
+interactions.
+Conclusion: Wireshark successfully demonstrated the working of TCP/IP layers through
+packet analysis.
+Experiment No. 5
+Title: Study and Installation of Network Simulator (NS3)
+Aim: To study and install NS3 network simulator for simulating network protocols.
+System Requirements: Ubuntu/Linux OS, NS3 package, Python/C++ support.
+Theory/Working Principle:
+NS-3 (Network Simulator version 3) is a discrete-event simulator used for research and educational
+purposes. It allows simulation of various network protocols (TCP, UDP, IP, Wi-Fi, LTE, etc.) in both
+wired and wireless environments.
+Installation Steps:
+1. Update system packages: sudo apt update
+2. Install prerequisites: sudo apt install gcc g++ python3 cmake
+3. Download NS3: wget https://www.nsnam.org/release/ns-allinone-3.xx.tar.bz2
+4. Extract and build:
+5. tar -xjf ns-allinone-3.xx.tar.bz2
+6. cd ns-allinone-3.xx
+7. ./build.py --enable-examples --enable-tests
+8. Run examples to verify installation:
+9. cd ns-3.xx
+10. ./waf --run hello-simulator
+NS3 provides an API to simulate network topologies, packet flows, and performance metrics,
+enabling researchers to analyze communication protocols before real-world deployment.
+Result: NS3 was successfully installed and verified with example simulations.
+Conclusion: NS3 was successfully installed and studied for network simulation experiments.
+Would you like me to make these answers slightly more concise (for writing in lab journal) or
+expanded (for practical file submission)?
+Great — I’ve prepared the five lab answers (Experiments 6 → 10) using the exact steps and content
+from the PDFs you uploaded. Each experiment follows the format you requested and the procedure
+text is taken from the provided PDFs (I cite each PDF right after the sections where it’s used). If you
+want these exported into a single document (Word/PDF) or shortened for a lab manual, tell me and
+I’ll produce that file.
+Experiment No. 6
+Title: To implement Cisco Packet Tracer (1-liner)
+Aim: To implement Cisco Packet Tracer.
+System Requirements: Cisco Packet Tracer software installed on the system.
+Theory / Working Principle (detailed):
+Cisco Packet Tracer is a cross-platform visual simulation tool by Cisco that allows users to create
+network topologies and emulate modern computer networks. It simulates configuration of Cisco
+routers and switches using a simulated CLI, and provides a drag-and-drop UI to add/remove devices.
+It is primarily an educational tool to learn CCNA concepts and networking fundamentals.
+Procedure (detailed — as in supplied PDF):
+(The PDF provides the experiment description and expects practical use of Packet Tracer — follow
+these steps in Packet Tracer to implement and test.)
+Result:
+Attach the Packet Tracer screenshots / print-outs showing the created topology and any command
+outputs (e.g., device CLI screenshots). Successful installation and simulation of the network in Packet
+Tracer.
+Conclusion (1-liner):
+Cisco Packet Tracer was implemented successfully to simulate network devices and configurations.
+Experiment No. 7
+Title: Design VPN and configure RIP using Packet Tracer (1-liner)
+Aim: Design VPN and configure RIP using Packet Tracer.
+System Requirements: Cisco Packet Tracer software.
+Theory / Working Principle (detailed):
+RIP (Routing Information Protocol) is an interior distance-vector routing protocol that uses hop count
+as its metric (maximum 15 hops; infinity = 16). RIP broadcasts periodic updates (every 30 s), supports
+equal-cost load balancing when multiple paths have same hop count, and has administrative distance
+120. It’s suitable for small networks and converges slower than some other protocols.
+Procedure (detailed — verbatim steps from PDF):
+1. Select “End Devices” on the panel (ctrl+alt+v). Then select PC, place on the logical plane. Add
+6 PCs on the logical panel.
+2. Select “Network devices”, select “Switches” then select 2960 switch. Add 3 switches on
+logical plane.
+3. Select “Network devices”, select “Routers” then select 1841 router. Add 3 routers in logical
+plane.
+4. To connect PC with switches select “Connections”, “Copper Straight” cable. Connect PCs to
+switches and switches to routers as shown in the lab diagram.
+5. Select Router0, turn off the router using the power button in Physical tab, insert HWIC-2T
+card in Physical tab. Add the card in router and turn on the router. Repeat for all routers.
+6. Select Connections then “Serial DTE” to connect routers.
+7. Apply IP address to all PCs: select each PC → Desktop tab → IP Configuration, apply the IP
+address and Default Gateway to each PC as shown in the table in the PDF (PC0..PC5 with
+appropriate network addresses).
+8. Apply IP addresses to router interfaces: Select each Router → Config → Interface, choose
+each interface, apply IP and turn on the port.
+9. Add network addresses to RIP on each router (i.e., configure RIP and add network
+statements for connected subnets) and repeat configuration for all routers.
+10. Send ICMP (ping) packets from one PC to another to test connectivity.
+11. On a router, open CLI and type show ip route to verify learned routes.
+Result:
+Attach printouts/screenshots showing configured topology, RIP configuration commands and show ip
+route output. Connectivity verified by successful pings between PCs.
+Conclusion (1-liner):
+RIP was configured and the designed VPN/topology showed correct routing and connectivity as
+verified by ping and routing table outputs.
+Experiment No. 8
+Title: Configure OSPF using Packet Tracer (1-liner)
+Aim: Configure OSPF using Packet Tracer.
+System Requirements: Cisco Packet Tracer software.
+Theory / Working Principle (detailed):
+OSPF (Open Shortest Path First) is a link-state interior gateway protocol developed by the IETF. It uses
+shortest-path-first (Dijkstra) computation to determine best paths. OSPF operates at IP protocol
+number 89 and typically has admin distance 110. It uses multicast addresses 224.0.0.5 (all OSPF
+routers) and 224.0.0.6 (DR/BDR updates). OSPF provides fast convergence and supports areas to
+scale large networks.
+Procedure (detailed — verbatim steps from PDF):
+1. Select “End Devices” on the panel (ctrl+alt+v). Then select PC and place on logical plane. Add
+6 PCs on the logical panel.
+2. Select “Network devices” → “Switches” → 2960 switch. Add 3 switches on the logical plane.
+3. Select “Network devices” → “Routers” → 1841 router. Add 3 routers in logical plane.
+4. To connect PCs with switches select “Connections” → “Copper Straight” cable. Connect PCs
+to switches and switches to routers as shown in the lab diagram.
+5. Select Router0, turn off the router (power button), add HWIC-2T card in Physical tab, then
+turn the router on. Repeat for all routers.
+6. Select Connections → “Serial DTE” to connect routers (for serial links).
+7. Apply IP addresses to all PCs: open each PC → Desktop → IP Configuration and set IP and
+Default Gateway according to the table in the PDF (PC0..PC5 with 10.10.10.x, 20.20.20.x,
+30.30.30.x networks).
+8. Apply IP addresses to router interfaces: Select Router → Config → Interface; assign IPs and
+enable interfaces (turn on the port).
+9. Select Router0 → CLI (enter enable then configure terminal) and configure OSPF (use
+appropriate router ospf <process-id> and network statements matching the topology).
+10. Verify routing with show ip route.
+Result:
+Attach packet-tracer printouts/screenshots showing topology, OSPF configuration commands and
+show ip route output. Confirm pings succeed between hosts in different networks.
+Conclusion (1-liner):
+OSPF was configured successfully and routing between all subnets was achieved as verified by
+routing tables and ICMP test.
+Experiment No. 9
+Title: Telnet Using Packet Tracer (1-liner)
+Aim: Telnet Using Packet Tracer.
+System Requirements: Cisco Packet Tracer software.
+Theory / Working Principle (detailed):
+Telnet is a client–server protocol that allows remote terminal access to another machine. The local
+machine uses a Telnet client to connect to a Telnet server on the remote machine. Telnet transmits
+data in plain text and provides remote login and command execution capabilities; therefore it is less
+secure than SSH. The experiment document also lists logging types, advantages and disadvantages of
+Telnet.
+Procedure (detailed — verbatim steps from PDF):
+1. Select 3 PCs from End Devices. Select router and switch as shown in the lab diagram.
+2. On the router CLI enter the following commands:
+3. enable
+4. configure terminal
+5. hostname R1
+6. interface g0/0
+7. ip add 192.168.1.1 255.255.255.0
+8. end
+9. wr
+10. configure terminal
+11. enable secret cisco
+12. end
+13. exit
+14. enable
+15. cisco
+16. configure terminal
+17. line vty 0 5
+18. login
+19. password 12
+20. end
+21. On a PC open Command Prompt and run:
+22. ping 192.168.1.1
+23. telnet 192.168.1.1
+When prompted for the password enter 12, then use enable and cisco as required during CLI access.
+Result:
+Attach printouts/screenshots showing successful Telnet connection from PC to router and any CLI
+outputs. Ping tests should confirm connectivity.
+Conclusion (1-liner):
+Telnet connection was established and remote CLI access verified; note Telnet sends plaintext and is
+not secure for production use.
+Experiment No. 10
+Title: SSH Using Packet Tracer (1-liner)
+Aim: SSH Using Packet Tracer.
+System Requirements: Cisco Packet Tracer software.
+Theory / Working Principle (detailed):
+SSH (Secure Shell) is a cryptographic network protocol used to securely transfer data and provide a
+secure remote shell. SSH uses asymmetric cryptography (public/private key pairs) for authentication
+and session encryption. Key types include RSA, DSA, ED25519, etc. SSH is more secure than
+password-based remote login, resists brute-force attacks better, and prevents exposure of plain-text
+credentials.
+Procedure (detailed — verbatim steps from PDF):
+1. Select 3 PCs from End Devices. Select router and switch as shown in the lab diagram.
+2. On the router CLI enter the following commands:
+3. enable
+4. configure terminal
+5. hostname R1
+6. interface g0/0
+7. ip add 192.168.1.1 255.255.255.0
+8. end
+9. wr
+10. configure terminal
+11. ip domain-name SSH1
+12. crypto key generate rsa
+13. 1024
+14. line vty 0 15
+15. transport input ssh
+16. login local
+17. ip ssh ver 2
+18. username R1 privilege 15 password cisco
+19. On a PC open Command Prompt and run:
+20. ping 192.168.1.1
+21. ssh -l R1 192.168.1.1
+When prompted, enter password cisco.
+Result:
+Attach printouts/screenshots showing SSH connection from PC to router, the successful login, and
+relevant CLI outputs (e.g., show ip interface brief or show running-config snippets showing SSH
+config).
+Conclusion (1-liner):
+SSH configuration was completed and secure remote access to the router was verified using Packet
+Tracer.

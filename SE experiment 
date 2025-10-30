@@ -316,3 +316,612 @@ Effective scheduling and tracking are crucial for successful project management,
 8. **Generate Reports and Analyze:**
    - Generate test execution and defect reports using the test management tool.[1]
    - Analyze the result
+
+
+
+
+give me case study for waterfall model, v model, Scrum.  make a Srs, dfd. make cost estimation doc. for white box testing, RMMM plan as well.
+
+Based on the lab manual requirements and current best practices, here are complete, copy-paste ready documents for all the experiments you requested:
+
+***
+
+# **CASE STUDY: ONLINE LIBRARY MANAGEMENT SYSTEM**
+
+This case study will be used consistently across all experiments below.
+
+## **Project Overview**
+An Online Library Management System that allows students, faculty, and librarians to manage books, issue/return operations, fine calculations, and generate reports digitally.
+
+***
+
+# **1. WATERFALL MODEL - CASE STUDY APPLICATION**
+
+## **Project:** Online Library Management System
+
+### **Phase 1: Requirements Analysis**
+**Duration:** 2 weeks
+
+**Activities:**
+- Conducted stakeholder meetings with librarians, students, and faculty
+- Gathered functional requirements: Book catalog management, user registration, book issue/return, fine calculation, search functionality
+- Non-functional requirements: System should support 500+ concurrent users, 99.9% uptime, secure authentication
+- Documented in SRS (see Section 3 below)
+
+**Deliverable:** Software Requirements Specification (SRS) Document[1]
+
+### **Phase 2: System Design**
+**Duration:** 3 weeks
+
+**Activities:**
+- Database design: Tables for Users, Books, Transactions, Fines, Categories
+- Architecture: Three-tier architecture (Presentation, Business Logic, Data Access Layer)
+- UI/UX mockups created for all user interfaces
+- Security design: Role-based access control (Student, Faculty, Librarian, Admin)
+
+**Deliverable:** Design Document with ER diagrams, class diagrams, DFDs[1]
+
+### **Phase 3: Implementation**
+**Duration:** 8 weeks
+
+**Activities:**
+- Backend development using Java Spring Boot
+- Frontend development using React.js
+- Database implementation in MySQL
+- Integration of payment gateway for fine payments
+- Code reviews conducted weekly
+
+**Deliverable:** Complete source code[1]
+
+### **Phase 4: Testing**
+**Duration:** 3 weeks
+
+**Activities:**
+- Unit testing of individual modules
+- Integration testing of complete system
+- User acceptance testing with 50+ library users
+- Performance testing under load
+- Security vulnerability assessment
+
+**Deliverable:** Test reports and bug tracking logs[1]
+
+### **Phase 5: Deployment**
+**Duration:** 1 week
+
+**Activities:**
+- Deployed on cloud server (AWS)
+- Data migration from old system
+- User training sessions conducted
+- Go-live with monitoring
+
+**Deliverable:** Live production system[1]
+
+### **Phase 6: Maintenance**
+**Duration:** Ongoing
+
+**Activities:**
+- Bug fixes reported by users
+- Monthly security patches
+- Feature enhancements based on feedback
+- Performance optimization
+
+**Advantages for this project:**
+- Clear requirements defined upfront
+- Structured documentation at each phase
+- Easy to track progress against milestones[1]
+
+**Disadvantages:**
+- Late discovery of UI/UX issues during testing phase
+- Difficult to accommodate new feature requests mid-development
+- Users couldn't preview system until testing phase[1]
+
+***
+
+# **2. V-MODEL - CASE STUDY APPLICATION**
+
+## **Project:** Online Library Management System
+
+### **Left Side - Verification Phases:**
+
+#### **Requirements Analysis → Acceptance Testing**
+**Requirements:**
+- User registration and authentication
+- Book search by title/author/ISBN/category
+- Issue/return books with due date tracking
+- Automated fine calculation
+- Report generation
+
+**Acceptance Test Design:**
+- Test Case 1: Verify user can successfully register and login
+- Test Case 2: Verify book search returns accurate results
+- Test Case 3: Verify fine calculation matches business rules
+- Test Case 4: Verify reports generate correct data[2][3]
+
+#### **System Design → System Testing**
+**System Design:**
+- Client-Server architecture
+- RESTful API design
+- Database schema with normalization
+- Session management
+
+**System Test Design:**
+- Test integration between frontend and backend
+- Test API endpoints for all CRUD operations
+- Test database transactions and rollbacks
+- Test session timeout and security[2][3]
+
+#### **Architecture Design → Integration Testing**
+**Architecture:**
+- Presentation Layer (React Components)
+- Business Logic Layer (Spring Boot Services)
+- Data Access Layer (JPA Repositories)
+- Database Layer (MySQL)
+
+**Integration Test Design:**
+- Test data flow from UI to database
+- Test API integration with payment gateway
+- Test email notification service integration
+- Test report generation module[2][3]
+
+#### **Module Design → Unit Testing**
+**Modules:**
+1. User Management Module
+2. Book Catalog Module
+3. Transaction Module
+4. Fine Calculation Module
+5. Report Generation Module
+
+**Unit Test Design:**
+- Test each function in isolation
+- Mock external dependencies
+- Test edge cases and boundary conditions
+- Achieve 80%+ code coverage[2][3]
+
+### **Bottom - Implementation/Coding**
+- Code developed following module specifications
+- Code reviews at every merge
+- Coding standards enforced
+
+### **Right Side - Validation Phases:**
+Tests executed as designed on left side, ensuring each development phase has corresponding testing phase[2][3]
+
+**Advantages for this project:**
+- Early test planning prevented defects
+- Clear traceability between requirements and tests
+- High quality output with fewer production bugs[3]
+
+**Disadvantages:**
+- Rigid structure made it difficult to accommodate changing requirements
+- Required extensive documentation upfront
+- Testing couldn't begin until coding was complete for each module[3]
+
+***
+
+# **3. SCRUM - CASE STUDY APPLICATION**
+
+## **Project:** Online Library Management System
+
+### **Project Setup**
+
+**Team Structure:**
+- **Product Owner:** Head Librarian
+- **Scrum Master:** Senior Developer
+- **Development Team:** 5 developers, 2 QA engineers, 1 UI/UX designer
+
+**Sprint Duration:** 2 weeks
+**Total Project Duration:** 12 weeks (6 sprints)[4][5]
+
+### **Product Backlog (Initial)**
+1. User registration and authentication (Story Points: 8)
+2. Book catalog management (Story Points: 13)
+3. Search functionality (Story Points: 5)
+4. Book issue functionality (Story Points: 8)
+5. Book return functionality (Story Points: 8)
+6. Fine calculation (Story Points: 5)
+7. Payment integration (Story Points: 13)
+8. Report generation (Story Points: 8)
+9. Admin dashboard (Story Points: 8)
+10. Email notifications (Story Points: 5)[5]
+
+### **Sprint 1 (Weeks 1-2)**
+
+**Sprint Planning:**
+- Selected user stories: User registration and authentication
+- Sprint Goal: Enable users to register and login securely
+- Tasks breakdown: Database setup, API development, UI design, testing
+
+**Daily Scrum:** 15-minute standup meetings
+- What did I do yesterday?
+- What will I do today?
+- Any blockers?
+
+**Sprint Review:**
+- Demonstrated working login/registration feature to Product Owner
+- Feedback: Add "Forgot Password" functionality
+- Added to Product Backlog for future sprint[4][5]
+
+**Sprint Retrospective:**
+- What went well: Good team collaboration
+- What to improve: Better test coverage needed
+- Action items: Implement TDD from Sprint 2[5]
+
+### **Sprint 2 (Weeks 3-4)**
+
+**Sprint Planning:**
+- Selected user stories: Book catalog management, Search functionality
+- Sprint Goal: Enable librarians to manage books and users to search
+
+**Sprint Execution:**
+- Completed book catalog CRUD operations
+- Implemented advanced search with filters
+- 85% test coverage achieved
+
+**Sprint Review:**
+- Product Owner requested category-wise book display
+- Added to Sprint 3 backlog[5]
+
+### **Sprint 3 (Weeks 5-6)**
+
+**Sprint Planning:**
+- Selected user stories: Book issue functionality, Book return functionality
+- Sprint Goal: Complete core transaction features
+
+**Sprint Execution:**
+- Implemented issue/return with validation
+- Added due date tracking
+- Real-time availability status
+
+**Sprint Review:**
+- Successfully demonstrated end-to-end book transaction
+- Stakeholders very satisfied[5]
+
+### **Sprint 4 (Weeks 7-8)**
+
+**Sprint Planning:**
+- Selected user stories: Fine calculation, Payment integration
+- Sprint Goal: Enable automated fine management
+
+**Sprint Execution:**
+- Implemented fine calculation engine
+- Integrated payment gateway (Razorpay)
+- Email notifications for overdue books
+
+**Sprint Review:**
+- Demonstrated automatic fine calculation
+- Feedback: Add fine waiver option for special cases
+- Added to backlog[5]
+
+### **Sprint 5 (Weeks 9-10)**
+
+**Sprint Planning:**
+- Selected user stories: Report generation, Admin dashboard
+- Sprint Goal: Enable administrative monitoring and reporting
+
+**Sprint Execution:**
+- Built comprehensive admin dashboard
+- Implemented multiple report types
+- Added data visualization charts
+
+**Sprint Review:**
+- Product Owner very happy with dashboard
+- Requested additional report filters
+- Planned for Sprint 6[4][5]
+
+### **Sprint 6 (Weeks 11-12)**
+
+**Sprint Planning:**
+- Selected user stories: Email notifications, Bug fixes, Polish
+- Sprint Goal: Final refinements and production readiness
+
+**Sprint Execution:**
+- Comprehensive email notification system
+- Fixed all critical bugs
+- Performance optimization
+- Security hardening
+
+**Sprint Review:**
+- Final product demonstration to all stakeholders
+- Acceptance criteria met
+- Ready for production deployment[5]
+
+**Project Retrospective:**
+- Delivered fully functional system in 12 weeks
+- High customer satisfaction
+- Team velocity improved from 21 to 34 story points per sprint
+- Flexibility to accommodate 12 change requests during development[4][5]
+
+**Advantages for this project:**
+- Regular feedback prevented major rework
+- Early delivery of core features enabled parallel library staff training
+- Adaptable to changing requirements
+- High team morale and collaboration[4][5]
+
+***
+
+# **4. SOFTWARE REQUIREMENTS SPECIFICATION (SRS) DOCUMENT**
+
+## **Online Library Management System**
+**Version 1.0**
+**Prepared by:** Development Team
+**Date:** October 30, 2025
+
+***
+
+### **1. INTRODUCTION**
+
+#### **1.1 Purpose**
+This SRS document specifies the complete software requirements for the Online Library Management System. It describes the functional and non-functional requirements, system constraints, and interfaces for the proposed system.[1]
+
+#### **1.2 Scope**
+The Online Library Management System is a web-based application designed to automate library operations including book cataloging, user management, issue/return transactions, fine calculations, and report generation. The system will serve students, faculty, and library staff.[1]
+
+**Benefits:**
+- Reduced manual workload for library staff
+- 24/7 access to library catalog for users
+- Automated fine calculation and tracking
+- Real-time book availability status
+- Comprehensive reporting and analytics
+
+#### **1.3 Definitions, Acronyms, and Abbreviations**
+- **OLMS:** Online Library Management System
+- **ISBN:** International Standard Book Number
+- **CRUD:** Create, Read, Update, Delete
+- **UI:** User Interface
+- **API:** Application Programming Interface
+- **DBMS:** Database Management System
+
+#### **1.4 References**
+- IEEE Std 830-1998: IEEE Recommended Practice for Software Requirements Specifications
+- Library Management Best Practices Documentation
+- University Library Policy Document
+
+#### **1.5 Overview**
+The remainder of this document contains the overall description of the system, specific requirements including functional and non-functional requirements, external interface requirements, and system features.[1]
+
+***
+
+### **2. OVERALL DESCRIPTION**
+
+#### **2.1 Product Perspective**
+The Online Library Management System is a standalone web-based application that replaces the existing manual library management process. It interfaces with:
+- Email service for notifications
+- Payment gateway for fine payments
+- Barcode scanner for book identification
+- User authentication service[1]
+
+#### **2.2 Product Functions**
+1. User registration and authentication
+2. Book catalog management
+3. Book search and browse
+4. Book issue and return
+5. Fine calculation and payment
+6. Reservation system
+7. Report generation
+8. Admin dashboard
+
+#### **2.3 User Classes and Characteristics**
+
+**Students:**
+- Technical proficiency: Medium
+- Usage frequency: Daily
+- Primary functions: Search books, issue/return, pay fines
+
+**Faculty:**
+- Technical proficiency: Medium
+- Usage frequency: Weekly
+- Primary functions: Search books, issue/return, extended borrowing period
+
+**Librarians:**
+- Technical proficiency: High
+- Usage frequency: Daily
+- Primary functions: Manage books, process transactions, generate reports
+
+**Admin:**
+- Technical proficiency: High
+- Usage frequency: Weekly
+- Primary functions: System configuration, user management, analytics[1]
+
+#### **2.4 Operating Environment**
+- **Platform:** Web-based (Chrome, Firefox, Safari, Edge)
+- **Server:** Linux-based cloud server (AWS/Azure)
+- **Database:** MySQL 8.0 or higher
+- **Network:** Internet connectivity required
+- **Minimum browser requirements:** Modern browser with JavaScript enabled
+
+#### **2.5 Design and Implementation Constraints**
+- Must comply with university data protection policies
+- Response time must be under 3 seconds for all operations
+- System must handle 500+ concurrent users
+- Must integrate with existing university authentication system
+- Must support mobile responsive design
+
+#### **2.6 Assumptions and Dependencies**
+- Stable internet connectivity is available
+- Users have basic computer literacy
+- Payment gateway service will be available 99.9% of time
+- Email service for notifications will be reliable
+- Book barcode system is standardized[1]
+
+***
+
+### **3. SPECIFIC REQUIREMENTS**
+
+#### **3.1 Functional Requirements**
+
+##### **FR1: User Management**
+
+**FR1.1 User Registration**
+- **Description:** New users shall be able to register with the system
+- **Input:** Name, Email, Phone, User Type, Password
+- **Processing:** Validate inputs, check duplicate email, hash password
+- **Output:** Confirmation message and activation email
+- **Priority:** High[1]
+
+**FR1.2 User Login**
+- **Description:** Registered users shall be able to login
+- **Input:** Email and Password
+- **Processing:** Authenticate credentials, create session
+- **Output:** Redirect to dashboard or error message
+- **Priority:** High[1]
+
+**FR1.3 User Profile Management**
+- **Description:** Users shall be able to view and edit their profile
+- **Input:** Updated profile information
+- **Processing:** Validate and update database
+- **Output:** Success/failure message
+- **Priority:** Medium
+
+##### **FR2: Book Catalog Management**
+
+**FR2.1 Add Book**
+- **Description:** Librarian shall be able to add new books to catalog
+- **Input:** Title, Author, ISBN, Category, Publisher, Edition, Quantity, Shelf Location
+- **Processing:** Validate ISBN uniqueness, store in database
+- **Output:** Success message with book ID
+- **Priority:** High[1]
+
+**FR2.2 Update Book**
+- **Description:** Librarian shall be able to update book information
+- **Input:** Book ID and updated fields
+- **Processing:** Validate book exists, update database
+- **Output:** Success/failure message
+- **Priority:** High
+
+**FR2.3 Delete Book**
+- **Description:** Admin shall be able to remove books from catalog
+- **Input:** Book ID
+- **Processing:** Check if book has active issues, soft delete
+- **Output:** Confirmation message
+- **Priority:** Medium
+
+**FR2.4 View Book Details**
+- **Description:** All users shall be able to view detailed book information
+- **Input:** Book ID
+- **Processing:** Retrieve book details from database
+- **Output:** Display book information including availability status
+- **Priority:** High[1]
+
+##### **FR3: Search and Browse**
+
+**FR3.1 Search Books**
+- **Description:** Users shall be able to search books by multiple criteria
+- **Input:** Search query (title/author/ISBN/keywords)
+- **Processing:** Execute database query with fuzzy matching
+- **Output:** List of matching books with availability status
+- **Priority:** High[1]
+
+**FR3.2 Advanced Search**
+- **Description:** Users shall be able to use advanced filters
+- **Input:** Category, Publication Year, Author, Availability Status
+- **Processing:** Multi-criteria database query
+- **Output:** Filtered book list
+- **Priority:** Medium
+
+**FR3.3 Browse by Category**
+- **Description:** Users shall be able to browse books by category
+- **Input:** Selected category
+- **Processing:** Retrieve all books in category
+- **Output:** Paginated book list
+- **Priority:** Medium
+
+##### **FR4: Transaction Management**
+
+**FR4.1 Issue Book**
+- **Description:** Librarian shall be able to issue books to users
+- **Input:** User ID, Book ID, Issue Date
+- **Processing:** Check user eligibility, book availability, create transaction record
+- **Output:** Success message with due date
+- **Priority:** High[1]
+
+**FR4.2 Return Book**
+- **Description:** Librarian shall be able to process book returns
+- **Input:** Transaction ID or Book ID and User ID
+- **Processing:** Update transaction, calculate fine if overdue, update book availability
+- **Output:** Return confirmation with fine amount (if any)
+- **Priority:** High[1]
+
+**FR4.3 Renew Book**
+- **Description:** Users shall be able to renew issued books
+- **Input:** Transaction ID
+- **Processing:** Check renewal eligibility (max 2 renewals), extend due date
+- **Output:** New due date or rejection message
+- **Priority:** Medium
+
+**FR4.4 Reserve Book**
+- **Description:** Users shall be able to reserve books that are currently issued
+- **Input:** Book ID
+- **Processing:** Add to reservation queue
+- **Output:** Confirmation with expected availability date
+- **Priority:** Low
+
+##### **FR5: Fine Management**
+
+**FR5.1 Calculate Fine**
+- **Description:** System shall automatically calculate fines for overdue books
+- **Input:** Transaction record with return date
+- **Processing:** Calculate days overdue × fine rate (₹5 per day)
+- **Output:** Fine amount
+- **Priority:** High[1]
+
+**FR5.2 Pay Fine**
+- **Description:** Users shall be able to pay fines online
+- **Input:** Fine amount, Payment method
+- **Processing:** Process payment through gateway, update fine status
+- **Output:** Payment receipt
+- **Priority:** Medium
+
+**FR5.3 View Fine History**
+- **Description:** Users shall be able to view their fine payment history
+- **Input:** User ID
+- **Processing:** Retrieve fine records from database
+- **Output:** List of fines with payment status
+- **Priority:** Low
+
+##### **FR6: Reporting**
+
+**FR6.1 Generate Issue/Return Report**
+- **Description:** Librarian shall be able to generate transaction reports
+- **Input:** Date range, Report type
+- **Processing:** Query database and format data
+- **Output:** PDF/Excel report
+- **Priority:** Medium[1]
+
+**FR6.2 Generate Overdue Report**
+- **Description:** System shall generate daily overdue book report
+- **Input:** Current date
+- **Processing:** Identify all overdue transactions
+- **Output:** Email report to librarian
+- **Priority:** High
+
+**FR6.3 Generate Popular Books Report**
+- **Description:** Admin shall be able to view most issued books
+- **Input:** Time period
+- **Processing:** Aggregate issue statistics
+- **Output:** Ranked list with issue counts
+- **Priority:** Low
+
+**FR6.4 Generate User Activity Report**
+- **Description:** Admin shall be able to view user borrowing patterns
+- **Input:** User ID or date range
+- **Processing:** Compile user transaction history
+- **Output:** Activity summary report
+- **Priority:** Low
+
+##### **FR7: Notification System**
+
+**FR7.1 Due Date Reminder**
+- **Description:** System shall send email reminders before due date
+- **Input:** Automated daily check
+- **Processing:** Identify books due in 3 days, send emails
+- **Output:** Email notifications
+- **Priority:** Medium[1]
+
+**FR7.2 Overdue Notification**
+- **Description:** System shall send overdue notifications
+- **Input:** Automated daily check
+- **Processing:** Identify overdue books, send emails
+- **Output:** Email notifications
+- **Priority:** High
+
+**FR7.3 Reservation Notification**
+- **Description:** System sha

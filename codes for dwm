@@ -1,0 +1,172 @@
+expt 4
+def separate_by_class(dataset):
+    separated = dict()  
+    for i in range(len(dataset)): 
+        vector = dataset[i]  
+        class_value = vector[-1]  
+        if (class_value not in separated):
+            separated[class_value] = list() 
+        separated[class_value].append(vector)  
+    return separated
+
+
+dataset = [
+    [3.393533211, 2.331273381, 0],
+    [3.110073483, 1.781539638, 0],
+    [1.343808831, 3.368360954, 0],
+    [3.582294042, 4.679179110, 0],
+    [2.280362439, 2.866990263, 0],
+    [7.423436942, 4.696522875, 1],
+    [5.745051997, 3.533989803, 1],
+    [9.172168622, 2.511101045, 1],
+]
+separated = separate_by_class(dataset)
+
+for label in separated:
+    print(label)
+    for row in separated[label]:
+        print(row)
+
+expt 5
+import numpy as np
+from matplotlib import pyplot
+from sklearn.datasets import load_iris
+
+
+dataset = load_iris()
+a = dataset.data
+b = np.zeros(150)
+
+
+for i in range(150):
+    b[i] = a[i, 1]
+
+
+b = np.sort(b)
+
+
+bin1 = np.zeros((30, 5))
+bin2 = np.zeros((30, 5))
+bin3 = np.zeros((30, 5))
+
+
+for i in range(0, 150, 5):
+    k = int(i / 5)
+    mean = (b[i] + b[i + 1] + b[i + 2] + b[i + 3] + b[i + 4]) / 5
+    for j in range(5):
+        bin1[k, j] = mean
+
+print("Bin Mean:\n", bin1)
+
+-
+for i in range(0, 150, 5):
+    k = int(i / 5)
+    for j in range(5):
+        if (b[i + j] - b[i]) < (b[i + 4] - b[i + j]):
+            bin2[k, j] = b[i]
+        else:
+            bin2[k, j] = b[i + 4]
+
+print("Bin Boundaries:\n", bin2)
+
+
+for i in range(0, 150, 5):
+    k = int(i / 5)
+    for j in range(5):
+        bin3[k, j] = b[i + 2]  # middle value (median)
+
+print("Bin Median:\n", bin3)
+
+
+
+pyplot.hist(bin1, bins=10)
+pyplot.title("Histogram - Bin Mean")
+pyplot.show()
+
+
+pyplot.hist(bin2, bins=10)
+pyplot.title("Histogram - Bin Boundaries")
+pyplot.show()
+
+
+pyplot.hist(bin3, bins=10)
+pyplot.title("Histogram - Bin Median")
+pyplot.show()
+
+  expt 7
+from pandas import DataFrame
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+Data = {'x':
+[25,34,22,27,33,33,31,22,35,34,67,54,57,43,50,57,59,52,65,47,49,48,35,33,44,45,38,43,51,4
+6],
+'y':
+[79,51,53,78,59,74,73,57,69,75,51,32,40,47,53,36,35,58,59,50,25,20,14,12,20,5,29,27,8,7]
+}
+df = DataFrame(Data,columns=['x','y'])
+kmeans = KMeans(n_clusters=3).fit(df)
+centroids = kmeans.cluster_centers_
+print(centroids)
+
+plt.scatter(df['x'], df['y'], c= kmeans.labels_.astype(float), s=50, alpha=0.5)
+plt.scatter(centroids[:, 0], centroids[:, 1], c='red', s=50)
+plt.show()
+
+expt 8
+from sklearn.cluster import AgglomerativeClustering
+import numpy as np
+# randomly chosen dataset
+X = np.array([[1, 2], [1, 4], [1, 0],
+[4, 2], [4, 4], [4, 0]])
+# here we need to mention the number of clusters
+# otherwise the result will be a single cluster
+# containing all the data
+clustering = AgglomerativeClustering(n_clusters = 2).fit(X)
+# print the class labels
+print(clustering.labels_)
+
+expt 9
+import apyori
+
+
+transactions = [
+['Milk', 'Bread', 'Saffron'],
+['Milk', 'Saffron'],
+['Bread', 'Saffron','Wafer'],
+['Bread','Wafer'],
+]
+
+
+Rules = list(apyori.apriori(transactions, min_support=0.5, min_confidence=0.5))
+
+
+for i in range(len(Rules)):
+LHS=list(Rules[i][2][0][0])
+RHS=list(Rules[i][2][0][1])
+support=Rules[i][1]
+confidence=Rules[i][2][0][2]
+lift=Rules[i][2][0][3]
+print("LHS:",LHS,"--","RHS:",RHS)
+
+print("Support:",support)
+print("Confidence:",confidence)
+print("Lift:",lift)
+print(10*"----")
+
+  expt 10
+import networkx as nx
+import matplotlib.pyplot as plt
+G = nx.DiGraph()
+G.add_edges_from([('A', 'D'), ('B', 'C'), ('B', 'E'), ('C', 'A'),
+('D', 'C'), ('E', 'D'), ('E', 'B'), ('E', 'F'),
+('E', 'C'), ('F', 'C'), ('F', 'H'), ('G', 'A'),
+('G', 'C'), ('H', 'A')])
+
+plt.figure(figsize =(10, 10))
+nx.draw_networkx(G, with_labels = True)
+hubs, authorities = nx.hits(G, max_iter = 50, normalized = True)
+# The in-built hits function returns two dictionaries keyed by nodes
+# containing hub scores and authority scores respectively.
+print("Hub Scores: ", hubs)
+print("Authority Scores: ", authorities)
+  

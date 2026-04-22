@@ -1,0 +1,358 @@
+Experiment No. 2.
+Aim Implementation of two pass macro processor.
+Theory:
+It is used for Identifying the macro name and performing
+expansion
+Features of Macro processor
+1. Recognized the macro defination
+2. Same macro definahon.
+3. Recognized the macro call
+4. Perform macro expansion.
+Databases required for pass 2
+In pass 2 use perform recognize macro call and perform
+macro expansion
+1. Copy FILE
+   It is a fil it contains the output given from
+   pass 1.
+2. MNT : It is used for recognizing macro name
+3. MDT : It is used to perform macro expansion
+4. MDTP: The starting index is given by MNT . it is used
+   to point the index of MDT
+5. ALA : it used to replace the index notation by its
+   actual value
+6. FSL it is used to contain the expanded macro call
+   which is given to the the assembler for further
+   processing.
+Conclusion:-
+Thus we have successfully implemented two pass
+macro processor using Java programming
+Diagram:- 
+Pass 2
+
+Read next
+source card
+
+search MNT for
+Macro Name, if
+Macro expansion call
+
+Macro name
+found ?
+
+Yes
+
+mdtp <- MNT Index
+for MNT[i][1]
+
+Get up argument
+list array
+
+MDTP2 <- MDTP+1
+
+Get line from MDT
+
+substitute arguments
+from macro call
+
+MEND
+psedo
+op?
+
+Yes (go to read next source card)
+
+No
+
+Write expanded
+source card (go to MDTP2 <- MDTP+1)
+
+No
+
+Write to
+expanded
+source file
+etc.
+
+END
+Pseudo
+op?
+
+Yes
+
+Stop expanded
+source file and
+assembler processing
+
+No
+
+code :-
+# two_pass_macro.py 
+program = [ 
+"MACRO", 
+"INCR &ARG", 
+"ADD &ARG, =1", 
+"MEND", 
+"START", 
+"INCR A", 
+"END" 
+] 
+mdt = [] 
+mnt = {} 
+output = [] 
+i = 0 
+# PASS 1 
+while i < len(program): 
+if program[i] == "MACRO": 
+name = program[i+1].split()[0] 
+mnt[name] = len(mdt) 
+i += 1 
+while program[i] != "MEND": 
+mdt.append(program[i]) 
+i += 1 
+else: 
+output.append(program[i]) 
+i += 1 
+# PASS 2 
+print("EXPANDED CODE") 
+for line in output: 
+if line.split()[0] in mnt: 
+idx = mnt[line.split()[0]] 
+print(mdt[idx]) 
+else: 
+print(line)
+
+
+Experiment no: 03
+Aim:- To design and implement a lexical analyzer
+that reads a source program and identifies
+token such as keywords, identifiers, operators
+literals and seperators and reports lexical
+errors if any.
+Theory:
+lexical Analyzer
+A lexical Analyzer is the first phase of compiler
+It reads the source program character by character,
+group characters into meaningful sequence
+called lexemes, and produce tokens as output.
+Token
+is a pair of
+1. token name   2) Attribute value (optional)
+Eg:- int a = 10;
+lexeme             Token type
+int                keyword
+a                  identifier
+=                  operator
+10                 number
+;                  seperator
+Type of tokens
+1. keywords - reserved words (int, float, etc)
+2. Identifiers - name of variable.
+3. Operators - +, -, *, /, =, <, >
+4. Seperators - ;, (), {}
+5. literals - numbers & constants
+6. comments - ignored by the compiler
+Algorithm:
+1. Read the source program input
+2. Remove the extra comments & extra spaces
+3. Scan characters from right to left.
+4. Identify lexeme based on predefined rules
+5. classify each lexeme into its token type.
+6. Display the token.
+7. Report invalid or unknown symbols or errors.
+Conclusion:
+The lexical analyzer plays an vital role in compiler
+design by converting a stream of characters into
+token. this experiment helped in understanding
+token identification, lexical rule and error handling
+Diagram :=
+Lexical Analyzer
+
+Input
+
+Read characters
+
+Push back
+extra characters
+
+lexical
+Analyzer
+
+Token
+
+Ask for
+token.
+
+Syntax
+Analyzer
+
+Code :- 
+# lexical_analyzer.py 
+import re 
+code = "int a = b + 10;" 
+keywords = ["int", "float", "if", "else"] 
+tokens = re.findall(r"[A-Za-z_]\w*|\d+|[=+*/;]", code) 
+for token in tokens: 
+if token in keywords: 
+print(f"Keyword: {token}") 
+elif token.isdigit(): 
+print(f"Number: {token}") 
+elif token.isidentifier(): 
+print(f"Identifier: {token}") 
+else: 
+print(f"Operator/Symbol: {token}")
+
+exp. No: 4
+Title: implementation of intermediate code generation phase.
+Aim: To design and Implement the intermediate code generation
+(ICG) phase of a compiler that converts source code
+into an intermediate representation such as Three address
+code (TAC).
+Theory:
+Intermediate Code Generation
+It is the third phase of a compiler which comes after
+lexical analysis & syntax analysis this phase converts
+the parse tree or syntax tree into a intermediate
+representation (IR) that's easy to optimize &
+translate in to machine code.
+Need for Intermediate code
+• make compiler machine independent
+• Simpler code optimization
+• Make target code generation easier.
+Types of statements in ICG:
+• assignment statements
+• Arithmetic statements
+• Conditional statements
+• Looping construct
+Algorithm
+1. Read the input expression or source program
+2. Parse the input and generate syntax tree
+3. Identify operator and operands
+4. Generate temporary variable
+5. Produce three address code instruction
+6. Display the generated intermediate code
+Advantage of intermediate code
+• Improve portability of compiler
+• simplify optimization
+Conclusion
+The intermediate code generation phase act as a
+bridge the front end and backend of the compiler. The
+experiment demonstrate how complex expressions
+can be broken into simpler instructions using temporary
+variable.
+Code :=
+class IntermediateCodeGenerator:
+    def __init__(self):
+        self.temp_count = 0
+        self.label_count = 0
+    def generate_temp(self):
+        temp_name = f"t{self.temp_count}"
+        self.temp_count += 1
+        return temp_name
+    def generate_label(self):
+        label_name = f"L{self.label_count}"
+        self.label_count += 1
+        return label_name
+    def generate_code(self, op, arg1="", arg2="", result=""):
+        if op == "goto":
+            return f"goto {arg1}"
+        elif op == "=":
+            return f"{result} = {arg1}"
+        else:
+            return f"{result} = {arg1} {op} {arg2}"
+# Example usag
+generator = IntermediateCodeGenerator()
+# Generate temporary variables and labels
+temp1 = generator.generate_temp()
+temp2 = generator.generate_temp()
+label1 = generator.generate_label()
+# Generate intermediate code
+code1 = generator.generate_code('+', 'x', 'y', temp1)
+code2 = generator.generate_code('*', temp1, 'z', temp2)
+code3 = generator.generate_code('-', temp2, 'w', 'result')
+code4 = generator.generate_code('goto', label1)
+# Print generated code
+print(code1)
+print(code2)
+print(code3)
+print(code4)
+
+Exp. No: 5
+Title: Implementation of code generation phase of compiler
+Aim: To design and implement the code generation phase of
+a compiler that converts intermediate code into target
+machine code/assembly code.
+Theory:
+Code generation phase
+The code generation phase is the final phase of a
+compiler it takes the intermediate representation (IR)
+produces by the earlier phases & translates it into
+target code, usually assembly or machine code.
+Inputs to code generator
+• Intermediate code (three address code)
+• Symbol Table
+• Register & memory information
+Outputs of code generator
+• Assembly language code
+• machine code (in real compiler)
+Tasks performed by code generator
+1. Instruction selection
+2. Register allocation
+3. Address calculation
+4. Target code generation
+Example:
+Intermediate Code (TAC)
+t1 = b * c
+t2 = a + t1
+x = t2
+generated assembly code:
+MOV R1, b
+MUL R1, c
+MOV R2, a
+ADD R2, R1
+MOV x, R2
+Algorithm:
+1. Read the intermediate code as input
+2. Analyze each instruction
+3. Select appropriate target machine instruction
+4. Allocate register to variable and temporary
+5. Generate assembly code generation
+6. Output the target code
+Advantage
+• Produce executable code
+• optimize resource usage
+Conclusion:
+The code generation phase bridge the gap between
+intermediate representation and executable command. This
+experiment demonstrate instruction selection, register allocation
+& target code generation.
+Code:
+class CodeGenerator:
+    def __init__(self):
+        self.instructions = []
+
+    def emit(self, opcode, operand=None):
+        if operand is not None:
+            self.instructions.append((opcode, operand))
+        else:
+            self.instructions.append((opcode,))
+
+    def generate_code(self, node):
+        if node['type'] == 'BINARY_OP':
+            self.generate_code(node['left'])
+            self.generate_code(node['right'])
+            self.emit('BINARY_' + node['operator'])
+
+        elif node['type'] == 'NUMBER':
+            self.emit('PUSH', node['value'])
+# Example AST
+ast = {
+    'type': 'BINARY_OP',
+    'operator': '+',
+    'left': {'type': 'NUMBER', 'value': 5},
+    'right': {'type': 'NUMBER', 'value': 3}
+}
+# Example usage
+generator = CodeGenerator()
+generator.generate_code(ast)
+# Print generated code
+for instruction in generator.instructions:
+    print(' '.join(map(str, instruction)))
